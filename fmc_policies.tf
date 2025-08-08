@@ -413,6 +413,7 @@ locals {
                 name = file_type
                 id   = try(data.fmc_file_types.module[domain.name].items[file_type].id, null)
               }]
+              analysis    = try(file_rule.analysis, null)
               store_files = try(file_rule.store_files, null)
             }]
 
